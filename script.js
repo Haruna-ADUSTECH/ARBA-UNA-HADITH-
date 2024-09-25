@@ -1,19 +1,12 @@
-// JavaScript for Hadith interaction (Optional for adding dynamic behavior)
+// Function to navigate to the corresponding Hadith page
+document.querySelectorAll('.list-group-item').forEach(function(item, index) {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the default anchor click behavior
 
-// Add a click event to the Hadith list items
-document.querySelectorAll('.list-group-item').forEach(function(item) {
-    item.addEventListener('click', function() {
-        alert('Loading the Hadith details...');
-        // This can be enhanced to load hadith dynamically if needed.
+        // Create the URL based on the clicked hadith index (1-based index)
+        const hadithPage = `hadith${index + 1}.html`;
+
+        // Redirect to the appropriate hadith page
+        window.location.href = hadithPage;
     });
 });
-
-// Future AJAX example for dynamically loading hadith content
-function loadHadith(hadithNumber) {
-    fetch(`hadith${hadithNumber}.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('.hadith-details').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading Hadith:', error));
-}
