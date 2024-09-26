@@ -419,5 +419,7 @@ function displayHadith(index) {
   document.getElementById('hadithArabic').textContent = hadiths[index].arabic;
   document.getElementById('hadithSharhi').textContent = hadiths[index].sharhi;
   document.getElementById('ayatArabic').textContent = hadiths[index].ayat;
+  document.getElementById('ayatTranslation').textContent = hadiths[index].translation;
+  document.getElementById('ayatReference').textContent = hadiths[index].reference;
   hadithDetails.style.display = 'block';
 }
