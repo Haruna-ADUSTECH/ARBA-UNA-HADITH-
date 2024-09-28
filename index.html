@@ -1,42 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARBA'UNA HADITH - Arba'un Nawawi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Raleway&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARBA'UNA HADITH</title>
+    <style>
+        /* Applying a gradient background that looks great on both phones and larger screens */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1D2671, #C33764);
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            min-height: 100vh;
+            color: white;
+            animation: backgroundMove 10s ease-in-out infinite;
+        }
+
+        /* Animation for moving background */
+        @keyframes backgroundMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hadith-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+            gap: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hadith-buttons button {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid #fff;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .hadith-buttons button:hover {
+            background-color: #FFD700;
+            color: #1D2671;
+            transform: scale(1.1);
+        }
+
+        .hadith-content {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hadith-content h2, .hadith-content p {
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .ayat {
+            color: #FFD700;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hadith-buttons {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hadith-buttons {
+                grid-template-columns: 1fr; /* 1 column for mobile */
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .hadith-buttons button {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
-  <header class="text-center py-4">
-    <img src="background-pattern.png" alt="Arba'una Hadith Logo" class="logo">
+
+<div class="container">
     <h1>ARBA'UNA HADITH</h1>
-  </header>
-
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="list-group" id="hadithList">
-          <!-- JavaScript will insert Hadith list here -->
-        </ul>
-      </div>
+    <div class="hadith-buttons">
+        <button onclick="showHadith(0)">Hadith 1</button>
+        <button onclick="showHadith(1)">Hadith 2</button>
+        <button onclick="showHadith(2)">Hadith 3</button>
+        <button onclick="showHadith(3)">Hadith 4</button>
+<button onclick="showHadith(4)">Hadith 5</button>
+<button onclick="showHadith(5)">Hadith 6</button>
+<button onclick="showHadith(6)">Hadith 7</button>
+<button onclick="showHadith(7)">Hadith 8</button>
+<button onclick="showHadith(8)">Hadith 9</button>
+<button onclick="showHadith(9)">Hadith 10</button>
+<button onclick="showHadith(10)">Hadith 11</button>
+<button onclick="showHadith(11)">Hadith 12</button>
+<button onclick="showHadith(12)">Hadith 13</button>
+<button onclick="showHadith(13)">Hadith 14</button>
+<button onclick="showHadith(14)">Hadith 15</button>
+<button onclick="showHadith(15)">Hadith 16</button>
+<button onclick="showHadith(16)">Hadith 17</button>
+<button onclick="showHadith(17)">Hadith 18</button>
+<button onclick="showHadith(18)">Hadith 19</button>
+<button onclick="showHadith(19)">Hadith 20</button>
+<button onclick="showHadith(20)">Hadith 21</button>
+<button onclick="showHadith(21)">Hadith 22</button>
+<button onclick="showHadith(22)">Hadith 23</button>
+<button onclick="showHadith(23)">Hadith 24</button>
+<button onclick="showHadith(24)">Hadith 25</button>
+<button onclick="showHadith(25)">Hadith 26</button>
+<button onclick="showHadith(26)">Hadith 27</button>
+<button onclick="showHadith(27)">Hadith 28</button>
+<button onclick="showHadith(28)">Hadith 29</button>
+<button onclick="showHadith(29)">Hadith 30</button>
+<button onclick="showHadith(30)">Hadith 31</button>
+<button onclick="showHadith(31)">Hadith 32</button>
+<button onclick="showHadith(32)">Hadith 33</button>
+<button onclick="showHadith(33)">Hadith 34</button>
+<button onclick="showHadith(34)">Hadith 35</button>
+<button onclick="showHadith(35)">Hadith 36</button>
+<button onclick="showHadith(36)">Hadith 37</button>
+<button onclick="showHadith(37)">Hadith 38</button>
+<button onclick="showHadith(38)">Hadith 39</button>
+<button onclick="showHadith(39)">Hadith 40</button>
+        <!-- Add more buttons as needed -->
     </div>
-  </div>
 
-  <div class="container mt-5" id="hadithDetails" style="display:none;">
-    <div class="card">
-      <div class="card-body">
-        <h2 id="hadithTitle"></h2>
-        <p id="hadithArabic" class="arabic-text"></p>
-        <p id="hadithSharhi"></p>
-        <h3>Ayat Supporting this Hadith:</h3>
-        <p id="ayatArabic" class="arabic-text"></p>
-        <p id="ayatTranslation"></p>
-        <p id="ayatReference"></p>
-      </div>
+    <div id="hadith-display" class="hadith-content">
+        <h2>Select a Hadith</h2>
+        <p>Click on a button to view the content of the selected Hadith.</p>
     </div>
-  </div>
+</div>
 
-  <script src="scripts.js"></script>
+<script>
+    const hadiths = [
+        {
+            title: "Hadith 1",
+            arabic: "إنما الأعمال بالنيات...",
+            sharhi: "Wannan Hadith yana karantar da cewa ayyukan mutane suna bisa ga niyyarsu...",
+            ayat: {
+                arabic: "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا...",
+                translation: "Allah ba Ya ɗora wa kowa wani abu da ya fi ƙarfin sa...",
+                reference: "Surat Al-Baqarah (2:286)"
+            }
+        },
+        {
+            title: "Hadith 2",
+            arabic: "الدين النصيحة...",
+            sharhi: "Wannan Hadith yana nuna cewa addini gina nasihu ne...",
+            ayat: {
+                arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ...",
+                translation: "Yaku waɗanda suka yi imani! Ku ji tsoron Allah...",
+                reference: "Surat At-Tawbah (9:119)"
+            }
+        },
+        {
+            title: "Hadith 3",
+            arabic: "من كان يؤمن بالله واليوم الآخر فليقل خيرًا أو ليصمت...",
+            sharhi: "Wannan Hadith yana karantar da cewa duk wanda ya yi imani da Allah da ranar Lahira, ya kamata ya faɗi alheri ko yayi shiru. Hadisin yana nuni da muhimmancin kame baki daga faɗar abubuwan da basu da amfani ko za su jawo cutarwa ga wasu. Maimakon hakan, mutum ya zaɓi yin magana ta alheri ko ya yi shiru.",
+            ayat: {
+                arabic: "وَإِذَا حُيِّيتُم بِتَحِيَّةٍ فَحَيُّوا بِأَحْسَنَ مِنْهَا أَوْ رُدُّوهَا ۗ إِنَّ اللَّهَ كَانَ عَلَىٰ كُلِّ شَيْءٍ حَسِيبًا",
+                translation: "Kuma idan aka yi muku sallama da gaisuwa, ku mayar da ita da mafi kyau ko kuma ku mayar da ita daidai. Lallai Allah Ya kasance Mai hisabi akan dukkan komai.",
+                reference: "Surat An-Nisa (4:86)"
+            }
+        },
+        {
+            title: "Hadith 4",
+            arabic: "الظلم ظلمات يوم القيامة...",
+            sharhi: "Wannan Hadith yana jan hankali daga aikata zalunci...",
+            ayat: {
+                arabic: "وَلَا تَحْسَبَنَّ اللَّهَ غَافِلًا...",
+                translation: "Kada ka yi tsammanin Allah mai gafala ne...",
+                reference: "Surat Ibrahim (14:42)"
+            }
+        }, 
+   {
+    title: "Hadith 5",
+    arabic: "إن الله لا ينظر إلى صوركم وأموالكم ولكن ينظر إلى قلوبكم وأعمالكم...",
+    sharhi: "Wannan Hadith yana karantar da cewa Allah ba ya kallon kamannin mutane ko dukiyarsu, sai dai zuciyarsu da ayyukansu.",
+    ayat: {
+      arabic: "يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا...",
+      translation: "Ya ku mutane! Hakika Mun halicce ku daga namiji da mace, kuma Mun sanya ku al'ummomi da kabilu domin ku san juna...",
+      reference: "Surat Al-Hujurat (49:13)"
+    }
+  },
+  {
+    title: "Hadith 6",
+    arabic: "إذا مات الإنسان انقطع عمله إلا من ثلاث: صدقة جارية أو علم ينتفع به أو ولد صالح يدعو له...",
+    sharhi: "Wannan Hadith yana nuna cewa idan mutum ya mutu, dukkan aikinsa yana yankewa sai dai guda uku: Sadaqa mai gudana, ilimin da ake amfani da shi, da ɗa nagari wanda yake yi masa addu’a.",
+    ayat: {
+      arabic: "الْمَالُ وَالْبَنُونَ زِينَةُ الْحَيَاةِ الدُّنْيَا...",
+      translation: "Dukiya da 'ya'ya suna daga cikin kayan ado na rayuwar duniya...",
+      reference: "Surat Al-Kahf (18:46)"
+    }
+  },
+  {
+    title: "Hadith 7",
+    arabic: "من صلى عليّ واحدة صلى الله عليه بها عشرا...",
+    sharhi: "Wannan Hadith yana nuna falalar yin salati ga Manzon Allah, inda Allah zai yi salati sau goma ga wanda ya yi sau daya.",
+    ayat: {
+      arabic: "إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا...",
+      translation: "Lallai Allah da mala'ikunsa suna yi wa Annabi salati. Ya ku wadanda suka yi imani! Ku yi salati gare shi, ku yi masa sallama.",
+      reference: "Surat Al-Ahzab (33:56)"
+    }
+  },
+  {
+    title: "Hadith 8",
+    arabic: "من حسن إسلام المرء تركه ما لا يعنيه...",
+    sharhi: "Wannan Hadith yana karantar da cewa daga kyawun Musulunci shine mutum ya bar abin da ba ya damunsa.",
+    ayat: {
+      arabic: "وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ...",
+      translation: "Kada ka bi abin da ba ka da ilmi a kansa.",
+      reference: "Surat Al-Isra (17:36)"
+    }
+  },
+  {
+    title: "Hadith 9",
+    arabic: "المرء على دين خليله فلينظر أحدكم من يخالل...",
+    sharhi: "Wannan Hadith yana nusar da cewa halin mutum yana bisa ga abokan sa, don haka dole ne ya zaɓi abokansa da kyau.",
+    ayat: {
+      arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ...",
+      translation: "Ya ku waɗanda suka yi imani! Ku ji tsoron Allah, kuma ku kasance tare da masu gaskiya.",
+      reference: "Surat At-Tawbah (9:119)"
+    }
+  },
+  {
+    title: "Hadith 10",
+    arabic: "من لا يشكر الناس لا يشكر الله...",
+    sharhi: "Wannan Hadith yana nuna cewa duk wanda ba ya gode wa mutane, ba zai iya godiya ga Allah ba.",
+    ayat: {
+      arabic: "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ...",
+      translation: "Kuma lokacin da Ubangijinku Ya yi sanarwa: idan kun gode, hakika zan ƙara muku (ni'ima).",
+      reference: "Surat Ibrahim (14:7)"
+    }
+  },
+ 
+  {
+    title: "Hadith 11",
+    arabic: "الدين النصيحة...",
+    sharhi: "Wannan Hadith yana karantar da cewa addini nasiha ne, wato tuni da tsaro ga musulmi akan al'amuran rayuwa da addini.",
+    ayat: {
+      arabic: "وَذَكِّرْ فَإِنَّ الذِّكْرَى تَنفَعُ الْمُؤْمِنِينَ...",
+      translation: "Kuma ka yi tunatarwa, domin tunatarwa tana amfanar da muminai.",
+      reference: "Surat Adh-Dhariyat (51:55)"
+    }
+  },
+  {
+    title: "Hadith 12",
+    arabic: "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه...",
+    sharhi: "Wannan Hadith yana nuna cewa ba zai cika imanin mutum ba har sai yana son dan uwansa abin da yake so wa kansa.",
+    ayat: {
+      arabic: "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ...",
+      translation: "Hakika muminai ‘yan’uwa ne.",
+      reference: "Surat Al-Hujurat (49:10)"
+    }
+  },
+  {
+    title: "Hadith 13",
+    arabic: "من كان يؤمن بالله واليوم الآخر فليقل خيرا أو ليصمت...",
+    sharhi: "Wannan Hadith yana karantar da cewa wanda ya yi imani da Allah da ranar Lahira, ya fadi alheri ko ya yi shiru.",
+    ayat: {
+      arabic: "مَا يَلْفِظُ مِنْ قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ...",
+      translation: "Babu abin da ya fadi daga magana face akwai mai tsaro da rubutu kusa da shi.",
+      reference: "Surat Qaf (50:18)"
+    }
+  },
+  {
+    title: "Hadith 14",
+    arabic: "من لا يرحم لا يُرحم...",
+    sharhi: "Wannan Hadith yana nuna cewa duk wanda ba ya jin kai ga mutane ba zai samu jin kai daga Allah ba.",
+    ayat: {
+      arabic: "فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ...",
+      translation: "To saboda wata rahama daga Allah ka yi musu tausayi.",
+      reference: "Surat Aal-Imran (3:159)"
+    }
+  },
+  {
+    title: "Hadith 15",
+    arabic: "المسلم من سلم المسلمون من لسانه ويده...",
+    sharhi: "Wannan Hadith yana nuna cewa musulmi shine wanda sauran musulmai suke cikin aminci daga harshensa da hannunsa.",
+    ayat: {
+      arabic: "وَقُولُوا لِلنَّاسِ حُسْنًا...",
+      translation: "Kuma ku yi wa mutane magana da kyakkyawar kalma.",
+      reference: "Surat Al-Baqarah (2:83)"
+    }
+  },
+  {
+    title: "Hadith 16",
+    arabic: "لا ضرر ولا ضرار...",
+    sharhi: "Wannan Hadith yana nuna cewa babu cutarwa a cikin musulunci, kuma kada a rama cutarwa da cutarwa.",
+    ayat: {
+      arabic: "فَمَنِ اعْتَدَى عَلَيْكُمْ فَاعْتَدُوا عَلَيْهِ بِمِثْلِ مَا اعْتَدَى عَلَيْكُمْ...",
+      translation: "Kuma duk wanda ya cutar da ku, to ku rama da irin abin da ya yi muku.",
+      reference: "Surat Al-Baqarah (2:194)"
+    }
+  },
+  {
+    title: "Hadith 17",
+    arabic: "اتق الله حيثما كنت...",
+    sharhi: "Wannan Hadith yana nuna cewa ya kamata mutum ya ji tsoron Allah a duk inda yake.",
+    ayat: {
+      arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَقُولُوا قَوْلًا سَدِيدًا...",
+      translation: "Ya ku waɗanda suka yi imani! Ku ji tsoron Allah, kuma ku fadi magana madaidaiciya.",
+      reference: "Surat Al-Ahzab (33:70)"
+    }
+  },
+  {
+    title: "Hadith 18",
+    arabic: "ازهد في الدنيا يحبك الله...",
+    sharhi: "Wannan Hadith yana nuna cewa rashin son duniya yana sanya mutum ya sami ƙaunar Allah.",
+    ayat: {
+      arabic: "إِنَّمَا هَذِهِ الْحَيَاةُ الدُّنْيَا مَتَاعٌ...",
+      translation: "Hakika wannan rayuwar duniya abu ne mai wucewa.",
+      reference: "Surat Al-Imran (3:185)"
+    }
+  },
+  {
+    title: "Hadith 19",
+    arabic: "من سلك طريقا يلتمس فيه علما سهل الله له به طريقا إلى الجنة...",
+    sharhi: "Wannan Hadith yana nuna cewa wanda ya bi hanyar neman ilimi, Allah zai sauƙaƙa masa hanyar shiga Aljanna.",
+    ayat: {
+      arabic: "يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ...",
+      translation: "Allah zai ɗaukaka waɗanda suka yi imani daga cikinku da waɗanda aka ba su ilimi da matsayi.",
+      reference: "Surat Al-Mujadilah (58:11)"
+    }
+  },
+  {
+    title: "Hadith 20",
+    arabic: "إنما الأعمال بالنيات...",
+    sharhi: "Wannan Hadith yana nuna cewa kowane aiki yana bisa ga niyya, kuma kowa zai sami sakamako gwargwadon niyyarsa.",
+    ayat: {
+      arabic: "إِنَّمَا نُطْعِمُكُمْ لِوَجْهِ اللَّهِ لَا نُرِيدُ مِنكُمْ جَزَاءً وَلَا شُكُورًا...",
+      translation: "Hakika muna ba ku abinci don neman yardar Allah, ba mu neman sakamako daga gare ku ko godiya.",
+      reference: "Surat Al-Insan (76:9)"
+    }
+  },
+  {
+    title: "Hadith 21",
+    arabic: "من غشنا فليس منا...",
+    sharhi: "Wannan Hadith yana nuna cewa duk wanda ya yi zamba ba ya cikin al'ummar musulmi.",
+    ayat: {
+      arabic: "وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ...",
+      translation: "Kuma ku cika sikeli idan kuna auna, ku auna da sikeli madaidaici.",
+      reference: "Surat Al-Isra (17:35)"
+    }
+  },
+  {
+    title: "Hadith 22",
+    arabic: "إذا التقى المسلمان بسيفيهما فالقاتل والمقتول في النار...",
+    sharhi: "Wannan Hadith yana nuna cewa idan musulmi biyu sun yi fada da makamai, duka wanda ya kashe da wanda aka kashe sun cancanci azaba.",
+    ayat: {
+      arabic: "وَلَا تَقْتُلُوا النَّفْسَ الَّتِي حَرَّمَ اللَّهُ إِلَّا بِالْحَقِّ...",
+      translation: "Kada ku kashe rai da Allah ya haramta, sai dai da gaskiya.",
+      reference: "Surat Al-Isra (17:33)"
+    }
+  },
+  {
+    title: "Hadith 23",
+    arabic: "اتقوا الله وأصلحوا ذات بينكم...",
+    sharhi: "Wannan Hadith yana nuna muhimmancin gyara alakar juna da tsoron Allah domin zaman lafiya.",
+    ayat: {
+      arabic: "فَاتَّقُوا اللَّهَ وَأَصْلِحُوا ذَاتَ بَيْنِكُمْ...",
+      translation: "Ku ji tsoron Allah, ku gyara tsakaninku.",
+      reference: "Surat Al-Anfal (8:1)"
+    }
+},
+{
+    title: "Hadith 24",
+    arabic: "من عادى لي وليا فقد آذنته بالحرب...",
+    sharhi: "Wannan Hadith yana nuna cewa duk wanda ya yi gaba da waliyyin Allah, Allah zai yi yaki da shi.",
+    ayat: {
+      arabic: "إِنَّ اللَّهَ يُدَافِعُ عَنِ الَّذِينَ آمَنُوا...",
+      translation: "Hakika Allah yana kare waɗanda suka yi imani.",
+      reference: "Surat Al-Hajj (22:38)"
+    }
+},
+{
+    title: "Hadith 25",
+    arabic: "إن الله طيب لا يقبل إلا طيبا...",
+    sharhi: "Wannan Hadith yana nuna cewa Allah mai tsarki ne kuma ba ya karɓar sai abin da ya halatta.",
+    ayat: {
+      arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا كُلُوا مِنْ طَيِّبَاتِ مَا رَزَقْنَاكُمْ...",
+      translation: "Ya ku waɗanda suka yi imani! Ku ci daga cikin halal ɗin abin da muka azurta ku da shi.",
+      reference: "Surat Al-Baqarah (2:172)"
+    }
+},
+{
+    title: "Hadith 26",
+    arabic: "إذا أحب الله عبدا ابتلاه...",
+    sharhi: "Wannan Hadith yana nuna cewa idan Allah yana son bawa, sai ya jarraba shi da wani abu don tabbatar da imaninsa.",
+    ayat: {
+      arabic: "وَلَنَبْلُوَنَّكُمْ بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ...",
+      translation: "Kuma lalle zamu jarraba ku da wani abu na tsoro da yunwa.",
+      reference: "Surat Al-Baqarah (2:155)"
+    }
+},
+{
+    title: "Hadith 27",
+    arabic: "ليس الشديد بالصرعة، إنما الشديد الذي يملك نفسه عند الغضب...",
+    sharhi: "Wannan Hadith yana nuna cewa karfi na gaskiya shine iya sarrafa zuciya lokacin fushi, ba tsananin jiki ba.",
+    ayat: {
+      arabic: "وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ...",
+      translation: "Waɗanda suke jure fushi, kuma suna yafiya ga mutane.",
+      reference: "Surat Aal-Imran (3:134)"
+    }
+},
+{
+    title: "Hadith 28",
+    arabic: "من لا يشكر الناس لا يشكر الله...",
+    sharhi: "Wannan Hadith yana nuna cewa wanda ba ya gode wa mutane, ba zai iya godewa Allah ba.",
+    ayat: {
+      arabic: "وَاشْكُرُوا لِلَّهِ إِن كُنتُمْ إِيَّاهُ تَعْبُدُونَ...",
+      translation: "Kuma ku gode wa Allah idan kuna bauta masa shi kaɗai.",
+      reference: "Surat Al-Baqarah (2:172)"
+    }
+},
+{
+    title: "Hadith 29",
+    arabic: "الكلمة الطيبة صدقة...",
+    sharhi: "Wannan Hadith yana nuna cewa kyakkyawan magana sadaka ce.",
+    ayat: {
+      arabic: "وَقُولُوا لِلنَّاسِ حُسْنًا...",
+      translation: "Kuma ku yi wa mutane magana da kyau.",
+      reference: "Surat Al-Baqarah (2:83)"
+    }
+},
+{
+    title: "Hadith 30",
+    arabic: "من تواضع لله رفعه...",
+    sharhi: "Wannan Hadith yana nuna cewa duk wanda ya kasance mai tawali’u saboda Allah, Allah zai ɗaukaka shi.",
+    ayat: {
+      arabic: "وَخْفِضْ جَنَاحَكَ لِلْمُؤْمِنِينَ...",
+      translation: "Ka saukar da fikafikanka ga muminai.",
+      reference: "Surat Al-Hijr (15:88)"
+    }
+},
+{
+    title: "Hadith 31",
+    arabic: "إن الحلال بين وإن الحرام بين وبينهما أمور مشتبهات لا يعلمهن كثير من الناس...",
+    sharhi: "Wannan Hadith yana nuna cewa halal bayyananne ne kuma haram bayyananne ne, amma akwai wasu abubuwa da ke cikin matsakaici (mai shakka) wanda ba kowa ne yake fahimtar su ba. Saboda haka, dole ne a guji wannan abu mai shakka domin kare imani da mutumci, saboda wanda ya tsare kansa daga abubuwan da ke da shakku, ya kiyaye addininsa da mutuncinsa.",
+    ayat: {
+      arabic:" يَا أَيُّهَا الَّذِينَ آمَنُوا كُلُوا مِنْ طَيِّبَاتِ مَا رَزَقْنَاكُمْ وَاشْكُرُوا لِلَّهِ إِن كُنتُمْ إِيَّاهُ تَعْبُدُونَ",
+      translation: "Ya ku waɗanda suka yi imani! Ku ci daga cikin halal ɗin abin da muka azurta ku da shi, kuma ku gode wa Allah idan dai ku ne masu bauta gare Shi",
+      reference: "Surat Al-Baqarah (2:172)"
+    }
+},
+{
+    title: "Hadith 32",
+    arabic: "من حسن إسلام المرء تركه ما لا يعنيه...",
+    sharhi: "Wannan Hadith yana nuna cewa daga cikin kyawun musulunci shine ka bar abin da ba ya shafarka.",
+    ayat: {
+      arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَذَرُوا مَا بَقِيَ مِنَ الرِّبَا...",
+      translation: "Ya ku waɗanda suka yi imani! Ku ji tsoron Allah, kuma ku bar abin da ya rage daga ribar.",
+      reference: "Surat Al-Baqarah (2:278)"
+    }
+},
+{
+    title: "Hadith 33",
+    arabic: "من كان يؤمن بالله واليوم الآخر فليكرم ضيفه...",
+    sharhi: "Wannan Hadith yana nuna cewa wanda ya yi imani da Allah da ranar Lahira ya girmama bako.",
+    ayat: {
+      arabic: "وَقُل لِعِبَادِي يَقُولُوا الَّتِي هِيَ أَحْسَنُ...",
+      translation: "Ka ce wa bayina su yi magana mai kyau.",
+      reference: "Surat Al-Isra (17:53)"
+    }
+},
+{
+    title: "Hadith 34",
+    arabic: "إن الله يحب الرفق في الأمر كله...",
+    sharhi: "Wannan Hadith yana nuna cewa Allah yana son sauki da sassauci a kowane al’amari.",
+    ayat: {
+      arabic: "وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانْفَضُّوا مِنْ حَوْلِكَ...",
+      translation: "Da ka kasance mai fushi, da zuciyarka mai tsauri, da sun watse daga gare ka.",
+      reference: "Surat Aal-Imran (3:159)"
+    }
+},
+{
+    title: "Hadith 35",
+    arabic: "دع ما يريبك إلى ما لا يريبك...",
+    sharhi: "Wannan Hadith yana nuna cewa ka bar abin da kake shakka ka koma ga abin da ba ka shakka.",
+    ayat: {
+      arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَذَرُوا مَا بَقِيَ مِنَ الرِّبَا...",
+      translation: "Ya ku waɗanda suka yi imani! Ku ji tsoron Allah, kuma ku bar abin da ya rage daga ribar.",
+      reference: "Surat Al-Baqarah (2:278)"
+    }
+},
+{
+    title: "Hadith 36",
+    arabic: "لا يغفر للقاتل...",
+    sharhi: "Wannan Hadith yana nuna cewa babu gafara ga wanda ya kashe ba bisa dalili ba.",
+    ayat: {
+      arabic: "وَلَا تَقْتُلُوا النَّفْسَ الَّتِي حَرَّمَ اللَّهُ إِلَّا بِالْحَقِّ...",
+      translation: "Kada ku kashe rai da Allah ya haramta sai dai da gaskiya.",
+      reference: "Surat Al-Isra (17:33)"
+    }
+},
+
+{
+    title: "Hadith 37",
+    arabic: "خيركم من تعلم القرآن وعلمه...",
+    sharhi: "Wannan Hadith yana nuna cewa mafi alkhairi a cikinku shine wanda ya koyi Alkur'ani kuma ya koyar da shi.",
+    ayat: {
+      arabic: "إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ...",
+      translation: "Lallai ne, mu ne muka saukar da Alkur'ani, kuma mu ne masu kiyaye shi.",
+      reference: "Surat Al-Hijr (15:9)"
+    }
+},
+{
+    title: "Hadith 38",
+    arabic: "من نفس عن مؤمن كربة من كرب الدنيا نفس الله عنه كربة من كرب يوم القيامة...",
+    sharhi: "Wannan Hadith yana bayyana falalar taimakon mumini da saukaka masa wata wahala daga wahalolin duniya, Allah zai saukaka masa wahala a ranar kiyama.",
+    ayat: {
+      arabic: "وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَى...",
+      translation: "Ku taimaki juna a kan alheri da tsoron Allah.",
+      reference: "Surat Al-Ma'idah (5:2)"
+    }
+},
+{
+    title: "Hadith 39",
+    arabic: "إن الله كتب الإحسان على كل شيء...",
+    sharhi: "Wannan Hadith yana nuna cewa Allah ya rubuta kyautatawa a kan kowane abu, ko a lokacin hallaka wata dabba, dole ne a yi kyautatawa.",
+    ayat: {
+      arabic: "إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالإِحْسَانِ...",
+      translation: "Lalle Allah yana umurni da adalci da kyautatawa.",
+      reference: "Surat An-Nahl (16:90)"
+    }
+},
+{
+    title: "Hadith 40",
+    arabic: "كن في الدنيا كأنك غريب أو عابر سبيل...",
+    sharhi: "Wannan Hadith yana koyar da cewa ka kasance kamar bako a duniya, ko kuma mai wucewa kawai, kada ka yi mata mugun kwadayin rayuwa.",
+    ayat: {
+      arabic: "وَمَا الْحَيَاةُ الدُّنْيَا إِلَّا مَتَاعُ الْغُرُورِ...",
+      translation: "Kuma ba abin da rayuwar duniya take ba face wani ɗan jin daɗin yaudara.",
+      reference: "Surat Al-Hadid (57:20)"
+    }
+}
+    ];
+
+    function showHadith(index) {
+        const hadith = hadiths[index];
+        const hadithDisplay = document.getElementById('hadith-display');
+        hadithDisplay.innerHTML = `
+            <h2>${hadith.title}</h2>
+            <p><strong>Arabic:</strong> ${hadith.arabic}</p>
+            <p><strong>Sharhi (Hausa):</strong> ${hadith.sharhi}</p>
+            <p><strong>Ayat:</strong></p>
+            <p class="ayat">${hadith.ayat.arabic}</p>
+            <p><em>Translation:</em> ${hadith.ayat.translation}</p>
+            <p><em>Reference:</em> ${hadith.ayat.reference}</p>
+        `;
+    }
+</script>
+
 </body>
 </html>
